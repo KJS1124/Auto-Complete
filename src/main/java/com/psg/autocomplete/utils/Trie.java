@@ -60,7 +60,7 @@ public class Trie {
         List<String> result = new ArrayList<>();
         for (char ch : data.toLowerCase().toCharArray()) {
             if (current.getChildren().get(ch) == null) {
-                current.getQueue().forEach(p -> result.add(p.getData()));
+                //current.getQueue().forEach(p -> result.add(p.getData()));
                 break;
             }
             current = current.getChildren().get(ch);

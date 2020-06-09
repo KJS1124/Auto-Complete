@@ -3,25 +3,17 @@ package com.psg.autocomplete.utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.ResourceUtils;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 
 public class InitEntries {
 
     /**
-     * @throws FileNotFoundException
+     * @param stream
      */
-    public static void init() throws FileNotFoundException {
-        File file = ResourceUtils.getFile("classpath:word");
+    public static void init(InputStream stream) {
         Trie trie = TrieSingleton.getInstance();
-        try {
-            new BufferedReader(new FileReader(file)).lines()
-                    .map(p -> p.toLowerCase().trim())
-                    .forEach(p -> trie.insert(p));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        new BufferedReader(new InputStreamReader(stream)).lines()
+                .map(p -> p.toLowerCase().trim())
+                .forEach(p -> trie.insert(p));
     }
 }

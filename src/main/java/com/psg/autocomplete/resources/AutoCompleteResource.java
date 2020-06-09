@@ -5,10 +5,7 @@ import com.psg.autocomplete.services.AutoComplete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,6 +13,7 @@ import java.util.List;
  * @author Karanjot Singh
  */
 @RestController
+@CrossOrigin
 public class AutoCompleteResource {
 
     @Autowired
@@ -36,7 +34,7 @@ public class AutoCompleteResource {
      * @return
      */
     @PostMapping("/add")
-    public ResponseEntity<DataNode> insert(@RequestParam("data") String keyword) {
-        return new ResponseEntity<DataNode>(autoComplete.add(keyword), HttpStatus.CREATED);
+    public ResponseEntity<DataNode> insert(@RequestBody DataNode keyword) {
+        return new ResponseEntity<DataNode>(autoComplete.add(keyword.getData()), HttpStatus.CREATED);
     }
 }
