@@ -13,5 +13,10 @@ step - 3. open command prompt in that folder and execute the command "docker bui
 step - 4. Once image build collect the image id from console or run command docker images and take latest builded image id<br />
 step - 5. execute the command docker run -p 127.0.0.1:9999:8080 IMAGE_ID<br />
 
+## Curl Commands
+1. curl -X GET 'http://localhost:8080/query?data=hello'
+2. curl -d '{"data":"hello"}' -H "Content-Type: application/json" -X POST http://localhost:8080/add
+Note :- if we are running in docker container please map port number accordingly to it.
+
 ## Note
 Please make sure both of server are running on same machine as we are not exposing services to outside.<br />
