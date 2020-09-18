@@ -7,4 +7,4 @@ before_install:
   mvn clean test
 
 install:
-  docker run --name autocomplete autocomplete:latest
+  docker build . autocomplete/0.0.1
