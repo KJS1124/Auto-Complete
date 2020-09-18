@@ -5,7 +5,7 @@ services:
 
 before_install:
   - chmod +x mvnw
-  - mvnw clean test
+  - mvn clean test
 
 install:
   docker build --tag autocomplete:0.0.1 .
