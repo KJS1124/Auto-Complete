@@ -13,8 +13,8 @@ import java.util.Objects;
 @AllArgsConstructor
 @ToString
 public class DataNode {
-    String data;
-    int rank;
+    private String data;
+    private int rank;
 
     @Override
     public boolean equals(Object o) {
