@@ -15,6 +15,5 @@ import javax.validation.constraints.NotNull;
 @ToString
 public class DataNodeDto {
     @NotNull
-    @NotBlank
     private String data;
 }

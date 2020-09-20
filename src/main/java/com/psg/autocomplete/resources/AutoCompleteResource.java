@@ -7,11 +7,17 @@ import com.psg.autocomplete.utils.DataNodeMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.ConstraintViolationException;
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author Karanjot Singh
@@ -34,7 +40,7 @@ public class AutoCompleteResource {
      * where parameter is a prefix data.
      */
     @GetMapping("/query")
-    public ResponseEntity<List<String>> getListOfAutoCompleteWords(@RequestParam("data") String keyword) {
+    public ResponseEntity<List<String>> getListOfAutoCompleteWords(@Valid @NotNull @RequestParam("data") String keyword) {
         LOGGER.info("Got a request for getting list for prefix " + keyword);
         return new ResponseEntity<>(autoComplete.getList(keyword), HttpStatus.OK);
     }
@@ -46,10 +52,11 @@ public class AutoCompleteResource {
      * Even this will increase the ranking for current words.
      */
     @PostMapping("/add")
-    public ResponseEntity<DataNodeDto> insert(@RequestBody DataNodeDto keyword) {
+    public ResponseEntity<DataNodeDto> insert(@Valid @RequestBody DataNodeDto keyword) {
         LOGGER.info("Got a request for adding data for prefix " + keyword);
         return new ResponseEntity<>(dataNodeMapper
                 .dataNodeToDataNodeDto(autoComplete
                         .add(keyword.getData())), HttpStatus.CREATED);
     }
+
 }
