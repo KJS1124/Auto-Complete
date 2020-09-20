@@ -1,23 +1,18 @@
 package com.psg.autocomplete.resources;
 
 import com.psg.autocomplete.dto.DataNodeDto;
-import com.psg.autocomplete.entites.DataNode;
 import com.psg.autocomplete.services.AutoComplete;
 import com.psg.autocomplete.utils.DataNodeMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author Karanjot Singh

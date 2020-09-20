@@ -2,7 +2,6 @@ package com.psg.autocomplete.entites;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.*;
@@ -24,13 +23,11 @@ public class TrieNode {
         this.rank = 0;
         this.isEnd = false;
         children = new HashMap<>();
-        queue = new PriorityQueue<DataNode>((l, r) -> {
-            return Integer.compare(l.getRank(), r.getRank());
-        });
+        queue = new PriorityQueue<>(Comparator.comparingInt(DataNode::getRank));
     }
 
     /**
-     * @param dataNode
+     * @param dataNode - will insert the data in tire
      */
     public void insertDataNode(DataNode dataNode) {
         if (queue.contains(dataNode))

@@ -2,7 +2,6 @@ package com.psg.autocomplete.dto;
 
 import lombok.*;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 /**
