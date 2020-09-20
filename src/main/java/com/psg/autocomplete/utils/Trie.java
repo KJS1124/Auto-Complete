@@ -4,12 +4,8 @@ import com.psg.autocomplete.entites.DataNode;
 import com.psg.autocomplete.entites.TrieNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
@@ -29,8 +25,8 @@ public class Trie {
     }
 
     /**
-     * @param data
-     * @return
+     * @param data - this is the word we will insert
+     * @return It will return the node which is inserted
      * This method will help to insert the new data into our data structure
      */
     public DataNode insert(String data) {
@@ -54,8 +50,8 @@ public class Trie {
     }
 
     /**
-     * @param stack
-     * @param dataNode
+     * @param stack - it is the stack calls to insert of each level
+     * @param dataNode - node which we will insert
      * this method will help us to maintain the data for caching with lastest data
      */
 
@@ -65,9 +61,9 @@ public class Trie {
     }
 
     /**
-     * @param data
-     * @return
-     * This will provide us the relavent list of words.
+     * @param data - word for which we are getting data
+     * @return - return the list of data of auto suggest keywords
+     * This will provide us the relevant list of words.
      */
     public List<String> get(String data) {
         LOGGER.info("Getting data for prefix "+ data);

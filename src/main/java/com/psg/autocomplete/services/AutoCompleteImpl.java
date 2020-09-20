@@ -5,7 +5,6 @@ import com.psg.autocomplete.utils.Trie;
 import com.psg.autocomplete.utils.TrieSingleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,8 +15,8 @@ public class AutoCompleteImpl implements AutoComplete {
     Trie trie = TrieSingleton.getInstance();
 
     /**
-     * @param data
-     * @return
+     * @param data - it is a keyword to get data
+     * @return - it will return the list of words
      */
     @Override
     public List<String> getList(String data) {
@@ -26,8 +25,8 @@ public class AutoCompleteImpl implements AutoComplete {
     }
 
     /**
-     * @param data
-     * @return
+     * @param data - it is a keyword to add data
+     * @return - it will return the data after insertion
      */
     @Override
     public DataNode add(String data) {

@@ -2,10 +2,10 @@ package com.psg.autocomplete.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.ResourceUtils;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class InitEntries {
     private static final Logger LOGGER = LoggerFactory.getLogger(InitEntries.class);
@@ -18,7 +18,7 @@ public class InitEntries {
         Trie trie = TrieSingleton.getInstance();
         new BufferedReader(new InputStreamReader(stream)).lines()
                 .map(p -> p.toLowerCase().trim())
-                .forEach(p -> trie.insert(p));
+                .forEach(trie::insert);
         LOGGER.info("Word List Initialized");
     }
 }
