@@ -1,7 +1,9 @@
 package com.psg.autocomplete.resources;
 
+import com.psg.autocomplete.dto.DataNodeDto;
 import com.psg.autocomplete.entites.DataNode;
 import com.psg.autocomplete.services.AutoComplete;
+import com.psg.autocomplete.utils.DataNodeMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,28 +25,31 @@ public class AutoCompleteResource {
     @Autowired
     AutoComplete autoComplete;
 
+    @Autowired
+    DataNodeMapper dataNodeMapper;
+
     /**
-     * @param keyword
-     * @return
-     * This is one end point to gwt the list of the words.
+     * @param keyword - this will take a word as input from api call
+     * @return This is one end point to gwt the list of the words.
      * where parameter is a prefix data.
      */
     @GetMapping("/query")
     public ResponseEntity<List<String>> getListOfAutoCompleteWords(@RequestParam("data") String keyword) {
-        LOGGER.info("Got a request for getting list for prefix "+ keyword);
-        return new ResponseEntity<List<String>>(autoComplete.getList(keyword), HttpStatus.OK);
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+        return new ResponseEntity<>(autoComplete.getList(keyword), HttpStatus.OK);
     }
 
 
     /**
-     * @param keyword
-     * @return
-     * This method will enhance our dictonary
+     * @param keyword - this will take a word as input from api call
+     * @return This method will enhance our dictonary
      * Even this will increase the ranking for current words.
      */
     @PostMapping("/add")
-    public ResponseEntity<DataNode> insert(@RequestBody DataNode keyword) {
-        LOGGER.info("Got a request for adding data for prefix "+ keyword);
-        return new ResponseEntity<DataNode>(autoComplete.add(keyword.getData()), HttpStatus.CREATED);
+    public ResponseEntity<DataNodeDto> insert(@RequestBody DataNodeDto keyword) {
+        LOGGER.info("Got a request for adding data for prefix " + keyword);
+        return new ResponseEntity<>(dataNodeMapper
+                .dataNodeToDataNodeDto(autoComplete
+                        .add(keyword.getData())), HttpStatus.CREATED);
     }
 }
