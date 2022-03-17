@@ -39,46 +39,6 @@ public class AutoCompleteResource {
         LOGGER.info("Got a request for getting list for prefix " + keyword);
         return new ResponseEntity<>(autoComplete.getList(keyword), HttpStatus.OK);
     }
-      
-    
-        /**
-     * @param keyword - this will take a word as input from api call
-     * @return This is one end point to gwt the list of the words.
-     * where parameter is a prefix data.
-     */
-    @GetMapping("/squery")
-    public ResponseEntity<List<String>> getListOfssutoCompleteWords(@Valid @NotNull @RequestParam("data") String keyword) {
-        LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);        LOGGER.info("Got a request for getting list for prefix " + keyword);        LOGGER.info("Got a request for getting list for prefix " + keyword);        LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);        LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);        LOGGER.info("Got a request for getting list for prefix " + keyword);        LOGGER.info("Got a request for getting list for prefix " + keyword);        LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);        LOGGER.info("Got a request for getting list for prefix " + keyword);        LOGGER.info("Got a request for getting list for prefix " + keyword);        LOGGER.info("Got a request for getting list for prefix " + keyword);        LOGGER.info("Got a request for getting list for prefix " + keyword);        LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-                LOGGER.info("Got a request for getting list for prefix " + keyword);
-        return new ResponseEntity<>(autoComplete.getList(keyword), HttpStatus.OK);
-    }
     
     /**
      * @param keyword - this will take a word as input from api call
