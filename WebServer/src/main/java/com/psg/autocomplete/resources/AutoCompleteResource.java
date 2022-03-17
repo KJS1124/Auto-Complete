@@ -40,6 +40,43 @@ public class AutoCompleteResource {
         return new ResponseEntity<>(autoComplete.getList(keyword), HttpStatus.OK);
     }
     
+        @GetMapping("/queryd")
+    public ResponseEntity<List<String>> getdListOfAutoCompleteWords(@Valid @NotNull @RequestParam("data") String keyword) {
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+                LOGGER.info("Got a request for getting list for prefix " + keyword);
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+                LOGGER.info("Got a request for getting list for prefix " + keyword);
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+                LOGGER.info("Got a request for getting list for prefix " + keyword);
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+                LOGGER.info("Got a request for getting list for prefix " + keyword);
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+                LOGGER.info("Got a request for getting list for prefix " + keyword);
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+                LOGGER.info("Got a request for getting list for prefix " + keyword);
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+                LOGGER.info("Got a request for getting list for prefix " + keyword);
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+                LOGGER.info("Got a request for getting list for prefix " + keyword);
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+                LOGGER.info("Got a request for getting list for prefix " + keyword);
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+                LOGGER.info("Got a request for getting list for prefix " + keyword);
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+                LOGGER.info("Got a request for getting list for prefix " + keyword);
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+                LOGGER.info("Got a request for getting list for prefix " + keyword);
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+                LOGGER.info("Got a request for getting list for prefix " + keyword);
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+                LOGGER.info("Got a request for getting list for prefix " + keyword);
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+                LOGGER.info("Got a request for getting list for prefix " + keyword);
+        LOGGER.info("Got a request for getting list for prefix " + keyword);
+        return new ResponseEntity<>(autoComplete.getList(keyword), HttpStatus.OK);
+    }
+    
     /**
      * @param keyword - this will take a word as input from api call
      * @return This method will enhance our dictonary
