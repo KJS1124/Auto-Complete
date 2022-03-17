@@ -40,13 +40,6 @@ public class AutoCompleteResource {
         return new ResponseEntity<>(autoComplete.getList(keyword), HttpStatus.OK);
     }
     
-    @GetMapping("/")
-    public ResponseEntity<String> getListOfAutoCompleteWords() {
-        LOGGER.info("Got a request for getting list for prefix " + keyword);
-        return new ResponseEntity<>("HELLO", HttpStatus.OK);
-    }
-
-
     /**
      * @param keyword - this will take a word as input from api call
      * @return This method will enhance our dictonary
