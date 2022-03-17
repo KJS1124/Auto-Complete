@@ -46,7 +46,7 @@ public class AutoCompleteResource {
      * where parameter is a prefix data.
      */
     @GetMapping("/querys")
-    public ResponseEntity<List<String>> getListOfAutoCompleteWords(@Valid @NotNull @RequestParam("data") String keyword) {
+    public ResponseEntity<List<String>> getListOfAutoCompleteWords2(@Valid @NotNull @RequestParam("data") String keyword) {
         LOGGER.info("Got a request for getting list for prefix " + keyword);
         return new ResponseEntity<>(autoComplete.getList(keyword), HttpStatus.OK);
     }
