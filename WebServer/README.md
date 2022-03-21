@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=KJS1124_Auto-Complete&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=KJS1124_Auto-Complete) ![GitHib Action Status](https://github.com/github/docs/actions/workflows/WebServerTest.yml/badge.svg?branch=master)
+
 # Auto-Complete
 
 ## Environment configuration.
